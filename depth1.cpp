@@ -46,6 +46,12 @@ int main( int argc, char** argv )
     }
     flip(frame0, frame0, 1);
     flip(frame1, frame1, 1);
+    GaussianBlur(frame0,frame0,Size(5,5),0,0);
+    GaussianBlur(frame1,frame1,Size(5,5),0,0);
+   // medianBlur(frame0,frame0,3);
+   // medianBlur(frame1,frame1,3);
+   // bilateralFilter(frame0,frame0,5,10,0,2.0);
+    //bilateralFilter(frame1,frame1,5,10,0,2.0);
     cvtColor(frame0, frame0_gray, CV_BGR2GRAY);
     equalizeHist(frame0_gray, frame0_gray);
     cvtColor(frame1, frame1_gray, CV_BGR2GRAY);
